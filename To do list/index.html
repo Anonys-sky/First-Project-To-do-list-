@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="">
+<head> <!-- same like browser title -->
+  <meta charset="UTF-8"> <!-- for usage of multi language-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>To-do List </title>
+
+  <link rel="stylesheet" href="style.css"> <!-- Link to CSS design file -->
+</head>
+
+<body> <!-- the main page content -->
+    
+    <div class="WholePage"> <!-- usually is class for us to style using css-->
+        <div class="MiddlePart"> <!-- middle part of the page -->
+
+            <h2>To do list 
+                <img src="images/meow2.png">
+            </h2>  <!-- title of app and its icon-->
+
+            <h3 id="timeDisplay"></h3> <!-- to hold time-->
+        
+
+            <div class = "row"> <!-- can hold input box and button -->
+
+                <input type="text" id="TextBox" placeholder="Add a new task..."> <!-- textbox to hold input by user-->
+
+                <button onclick = "addTask()" > 
+                    <img src= "images/meow.png" >
+                </button> <!-- button that runs addtask-->
+
+            </div>
+            <ul id="list-container"></ul> <!-- <ul> use to hold <li> in form of vertical list -->
+        </div>    
+    </div>
+        
+    <script src="script.js"></script> <!-- to link JavaScript file -->
+</body>
+
+</html>

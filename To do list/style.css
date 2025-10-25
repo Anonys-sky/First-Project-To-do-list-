@@ -1,0 +1,200 @@
+* {
+    margin: 0; /* removes spaces on all sides if 0 ( mainly use to move things )*/
+    padding: 0; /* removes default padding of elements (space between border and content) */
+    box-sizing: border-box;
+    font-family: "Trebuchet MS", "Verdana", "Arial", sans-serif;
+}
+
+body {
+    overflow-x: hidden; /* prevents horizontal scrolling */
+}
+
+/* design for whole page */
+.WholePage {
+    width: 100%;
+    min-height: 100vh;
+    display: flex; /* flexbox to make middle center */
+    justify-content: center; /* center horizontally */
+    align-items: center; /* center vertically */
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 40, 0.7)), /* dark gradient */
+                url("images/cbg.jpg") no-repeat center center fixed; /* fix image on center */
+    background-size: cover; /* adjusted to cover whole page */
+    padding: 50px; 
+}
+
+/* The design of to do list box */
+.MiddlePart {
+    width: 100%;
+    max-width: 480px; /* adjust width horizontally of box */
+    background: #ffffff2e;
+    border-radius: 20px;
+    padding: 35px 30px 60px; /* top horizontal bottom inside */
+    backdrop-filter: blur(14px); /* frosted effect on box*/
+
+    box-shadow: 0 10px 25px #6b01ffa4; /* glowy neon  effect */
+    color: #b000fc;
+    animation: fadeIn 1s ease; /* apply fade animation */
+}
+
+/* Smooth fade-in animation */
+@keyframes fadeIn /* animation for when open web */
+{
+    from { opacity: 0; transform: translateY(25px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+#timeDisplay {
+  text-align: center;
+
+  font-size: 20px;
+  color: #ffffff;
+  letter-spacing: 1px;
+  margin-bottom: 15px;
+  text-shadow: 0 0 10px #ffffff99;
+}
+/* design title */
+.MiddlePart h2 {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 30px;
+    font-size: 36px;
+    letter-spacing: 1px;
+    color: #7300ff;
+}
+
+.MiddlePart h2 img {
+    width: 60px;
+    height: 80px;
+    vertical-align: middle; /* keeps it level with the text */
+}
+/* input box row design */
+.row {
+    display: flex; /* box to hold input box and button */
+    align-items: center; /* make item vertical center */
+    justify-content: space-between; /* space between input box and button */
+    background: #ffffff40;
+    border-radius: 30px; /* make input box rounded */
+    padding: 5px 8px 5px 20px; /* top right bottom left */
+    margin-bottom: 20px; /* space below the input box*/
+}
+
+/* Input box */
+input {
+    
+    border: none; /* remove border */
+    outline: none; /* remove outline when clicked */
+    background: transparent; /* make background transparent */
+    color: #fff;
+    padding: 10px; /* space inside input box */
+    font-size: 16px;
+    letter-spacing: 0.5px;
+}
+
+input::placeholder {
+    color: #ddd; /* add new task....  text color */
+}
+
+/* Cat button */
+button {
+    border: none;
+    outline: none;
+    background: transparent;
+    cursor: pointer;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, filter 0.3s ease; /* smooth hover effect */
+    margin-right: 5px;
+}
+
+button img {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    filter: drop-shadow(0 0 8px #ffffffcc); /* glow effect on cat */
+}
+
+button:hover {
+    transform: scale(1.20);
+    filter: brightness(1.00);
+}
+
+/* listing design */
+ul {
+    list-style: none;
+    margin-top: 10px;
+    padding-left: 0; /* remove default padding */
+}
+
+/* Each task item */
+ul li {
+    position: relative; /* to align check box and remove box */
+    padding: 14px 45px 14px 50px; /* top right bottom left */
+    font-size: 17px;
+    color: #fff;
+    border-bottom: 1px solid #ffffff33; /* line below task */
+    user-select: none; /* prevent text selection */
+    cursor: pointer; /* whole item clickable*/
+    transition: background 0.2s ease, color 0.2s ease; /* smooth color change */
+}
+
+/* Hover effect for list items */
+ul li:hover {
+    background: #ffffff1f;
+    box-shadow: 0 0 10px #ffffff40;
+    border-radius: 10px; /* rounded when mouse move */
+    transform: scale(1.02); /* slight zoom in when mouse move*/
+    transition: all 0.25s ease; /* smooth transition */
+}
+
+/* checkbox design */
+ul li::before {
+    content: '';
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background-image: url("images/unchecked.png");
+    background-size: cover; /* cat cover circle */
+    background-position: center; /* center the image */
+    top: 50%; /* center vertically */
+    left: 10px; /* position from left */
+    transform: translateY(-50%); /* center vertically */
+}
+
+/* Checked task */
+ul li.checked {
+    color: #6e78e3;
+    text-decoration: line-through;
+}
+
+ul li.checked::before {
+    background-image: url("images/good.png");
+}
+
+/* remove design */
+ul li span {
+    position: absolute; /* to position on right */
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 36px;
+    height: 36px;
+    color: #fff;
+    font-size: 22px;
+    line-height: 36px;
+    text-align: center;
+    border-radius: 50%;
+    transition: 0.3s; /* smooth hover effect */
+}
+
+ul li span:hover {
+    background: #ff5945cc;
+    box-shadow: 0 0 10px #ff5945;
+}
