@@ -142,6 +142,9 @@ ul li {
     user-select: none; /* prevent text selection */
     cursor: pointer; /* whole item clickable*/
     transition: background 0.2s ease, color 0.2s ease; /* smooth color change */
+    white-space: nowrap; /* prevent text wrap */
+    overflow: hidden; /* hide overflow text */
+    text-overflow: ellipsis; /* add ... for too much text */
 }
 
 /* Hover effect for list items */
@@ -198,3 +201,4 @@ ul li span:hover {
     background: #ff5945cc;
     box-shadow: 0 0 10px #ff5945;
 }
+
