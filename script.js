@@ -3,7 +3,7 @@ const inputBox = document.getElementById("TextBox");
 inputBox.addEventListener("keypress", function(event)  // event listener for enter key
 {
     if (event.key === "Enter") {
-        event.preventDefault();
+        event.preventDefault(); // prevent default action of enter key
         addTask();
     }
 });
@@ -62,3 +62,4 @@ function showTime() {
 // Run immediately and update every second
 showTime();
 setInterval(showTime, 1000);
+
